@@ -1,6 +1,7 @@
 package com.geraud.ocr_bibliotheque.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,6 +19,9 @@ public class Topic {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_topic;
 
+    private String keyword;
+
     @ManyToMany(mappedBy = "topics")
+    @JsonIgnore
     private Set<Book> books;
 }

@@ -1,5 +1,6 @@
 package com.geraud.ocr_bibliotheque.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,6 +19,7 @@ public class StockId implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "isbn")
+    @JsonIgnore
     private Book book;
 
     @ManyToOne

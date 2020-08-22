@@ -1,6 +1,7 @@
 package com.geraud.ocr_bibliotheque.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,5 +20,6 @@ public class Publisher {
     private String name;
 
     @OneToMany(mappedBy = "publisher")
+    @JsonIgnore
     private Set<Book> books;
 }

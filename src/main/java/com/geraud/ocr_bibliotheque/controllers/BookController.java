@@ -1,5 +1,8 @@
 package com.geraud.ocr_bibliotheque.controllers;
 
+import com.geraud.ocr_bibliotheque.dao.BookDao;
+import com.geraud.ocr_bibliotheque.domain.Book;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,10 +14,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class BookController {
 
-    @RequestMapping(value = "/book/{id}/show")
-    public String showBookById(@PathVariable String id){
+    @Autowired
+    private BookDao bookDao;
 
-        return "Affichera livre avec id : " + id;
+    @RequestMapping(value = "/book/{isbn}/show")
+    public Book showBookById(@PathVariable Long isbn){
+        Book trouve = bookDao.findBookByIsbn(isbn);
+
+        System.out.println(trouve.getPublisher().getName());
+
+        return bookDao.findBookByIsbn(isbn);
     }
 
 }

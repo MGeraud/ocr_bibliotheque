@@ -1,6 +1,7 @@
 package com.geraud.ocr_bibliotheque.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,5 +23,6 @@ public class Library {
     private String address;
 
     @OneToMany(mappedBy = "pk.library")
+    @JsonIgnore
     private Set<Stock> stocks = new HashSet<>();
 }

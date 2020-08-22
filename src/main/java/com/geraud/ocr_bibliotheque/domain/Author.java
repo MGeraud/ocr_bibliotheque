@@ -1,5 +1,6 @@
 package com.geraud.ocr_bibliotheque.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,5 +22,6 @@ public class Author {
     private String last_name;
 
     @ManyToMany(mappedBy = "authors")
+    @JsonIgnore
     private Set<Book> books;
 }

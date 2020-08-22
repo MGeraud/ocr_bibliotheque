@@ -1,6 +1,7 @@
 package com.geraud.ocr_bibliotheque.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,7 +16,7 @@ import java.util.Set;
 public class Book {
 
     @Id
-    private String isbn;
+    private Long isbn;
 
     private String title;
     private String description;
