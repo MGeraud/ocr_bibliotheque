@@ -23,8 +23,11 @@ public class Book {
     private String isbn;
 
     private String title;
+
+    @Lob
     private String description;
     private int year;
+    private String image;
 
     @Enumerated(value = EnumType.STRING)
     private Theme theme;
