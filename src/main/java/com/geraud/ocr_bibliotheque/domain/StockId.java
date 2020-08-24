@@ -18,7 +18,7 @@ import java.io.Serializable;
 public class StockId implements Serializable {
 
     @ManyToOne
-    @JoinColumn(name = "isbn")
+    @JoinColumn(name = "id_book")
     @JsonIgnore
     private Book book;
 

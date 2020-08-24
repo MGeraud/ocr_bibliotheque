@@ -16,21 +16,25 @@ import java.util.Set;
 public class Book {
 
     @Id
-    private Long isbn;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id_book;
+
+    @Column(unique = true)
+    private String isbn;
 
     private String title;
     private String description;
-    private LocalDate year;
+    private int year;
 
     @Enumerated(value = EnumType.STRING)
     private Theme theme;
 
     @ManyToMany
-    @JoinTable(name = "book_author" , joinColumns = @JoinColumn(name = "isbn") , inverseJoinColumns = @JoinColumn(name = "id_author"))
+    @JoinTable(name = "book_author" , joinColumns = @JoinColumn(name = "id_book") , inverseJoinColumns = @JoinColumn(name = "id_author"))
     private Set<Author> authors = new HashSet<>();
 
     @ManyToMany
-    @JoinTable(name = "book_topics" , joinColumns = @JoinColumn(name = "isbn") , inverseJoinColumns = @JoinColumn(name = "id_topics"))
+    @JoinTable(name = "book_topics" , joinColumns = @JoinColumn(name = "id_book") , inverseJoinColumns = @JoinColumn(name = "id_topics"))
     private Set<Topic> topics = new HashSet<>();
 
     @ManyToOne
