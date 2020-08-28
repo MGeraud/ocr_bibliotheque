@@ -6,9 +6,11 @@ import com.geraud.ocr_bibliotheque.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -26,10 +28,19 @@ public class BookController {
 
         return bookService.findByIsbn(isbn);
     }
-
+/*
     @RequestMapping(value = "/book/show")
     public Page<Book> showAllWithPagination (){
 
         return bookService.findAllWithPagination(1,2);
+    }
+*/
+    @RequestMapping(value = "/book/show")
+    public Page<Book> showByAuthor(@RequestParam("page") int page,
+                                   @RequestParam("size") int size,
+                                   @RequestParam("author") String author) {
+
+        Pageable pageable = PageRequest.of(page, size);
+        return bookService.findByAuthor(author , pageable);
     }
 }

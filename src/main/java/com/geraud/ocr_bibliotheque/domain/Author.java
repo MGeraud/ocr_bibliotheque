@@ -18,8 +18,8 @@ public class Author {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_author;
 
-    private String first_name;
-    private String last_name;
+    private String firstname;
+    private String lastname;
 
     @ManyToMany(mappedBy = "authors")
     @JsonIgnore
