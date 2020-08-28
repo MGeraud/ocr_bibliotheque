@@ -2,6 +2,7 @@ package com.geraud.ocr_bibliotheque.controllers;
 
 import com.geraud.ocr_bibliotheque.dao.BookDao;
 import com.geraud.ocr_bibliotheque.domain.Book;
+import com.geraud.ocr_bibliotheque.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -18,21 +19,17 @@ import org.springframework.web.bind.annotation.RestController;
 public class BookController {
 
     @Autowired
-    private BookDao bookDao;
+    private BookService bookService;
 
     @RequestMapping(value = "/book/{isbn}/show")
-    public Book showBookById(@PathVariable String isbn){
-        Book trouve = bookDao.findBookByIsbn(isbn);
+    public Book showBookByIsbn(@PathVariable String isbn){
 
-        System.out.println(trouve.getPublisher().getName());
-
-        return bookDao.findBookByIsbn(isbn);
+        return bookService.findByIsbn(isbn);
     }
 
     @RequestMapping(value = "/book/show")
     public Page<Book> showAllWithPagination (){
 
-        return bookDao.findAll(PageRequest.of(0,3));
+        return bookService.findAllWithPagination(1,2);
     }
-
 }
