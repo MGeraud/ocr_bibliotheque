@@ -2,6 +2,7 @@ package com.geraud.ocr_bibliotheque.controllers;
 
 import com.geraud.ocr_bibliotheque.domain.Book;
 import com.geraud.ocr_bibliotheque.services.BookService;
+import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -27,7 +28,7 @@ public class BookController {
      * @return description du livre dont l'isbn correspont à celui recherché
      */
     @RequestMapping(value = "/book/{isbn}/show")
-    public Book showBookByIsbn(@PathVariable String isbn){
+    public Book showBookByIsbn(@PathVariable String isbn) {
         return bookService.findByIsbn(isbn);
     }
 
