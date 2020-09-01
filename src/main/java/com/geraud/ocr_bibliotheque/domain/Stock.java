@@ -17,6 +17,6 @@ public class Stock {
 
     private String label;
     private String wings;
-    private String column;
+    private String pillar;
     private String shelf;
 }
