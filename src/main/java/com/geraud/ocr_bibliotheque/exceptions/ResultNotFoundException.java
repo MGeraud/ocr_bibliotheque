@@ -4,16 +4,16 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.NOT_FOUND)
-public class NotFoundException extends RuntimeException{
+public class ResultNotFoundException extends RuntimeException{
 
-    public NotFoundException() {
+    public ResultNotFoundException() {
     }
 
-    public NotFoundException(String message) {
+    public ResultNotFoundException(String message) {
         super(message);
     }
 
-    public NotFoundException(String message, Throwable cause) {
+    public ResultNotFoundException(String message, Throwable cause) {
         super(message, cause);
     }
 }

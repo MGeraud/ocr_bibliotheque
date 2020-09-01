@@ -6,7 +6,7 @@ import com.geraud.ocr_bibliotheque.dao.TopicDao;
 import com.geraud.ocr_bibliotheque.domain.Author;
 import com.geraud.ocr_bibliotheque.domain.Book;
 import com.geraud.ocr_bibliotheque.domain.Topic;
-import com.geraud.ocr_bibliotheque.exceptions.NotFoundException;
+import com.geraud.ocr_bibliotheque.exceptions.ResultNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -38,7 +38,7 @@ public class BookServiceImpl implements BookService{
 
         Optional<Book> optionalBook = bookDao.findBookByIsbn(isbn);
         if (!optionalBook.isPresent()){
-            throw new NotFoundException("Livre non trouvé");
+            throw new ResultNotFoundException("Livre non trouvé");
         }
         return optionalBook.get();
     }
