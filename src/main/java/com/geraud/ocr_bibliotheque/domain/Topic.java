@@ -19,6 +19,7 @@ public class Topic {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_topic;
 
+    @Column(unique = true)
     private String keyword;
 
     @ManyToMany(mappedBy = "topics")

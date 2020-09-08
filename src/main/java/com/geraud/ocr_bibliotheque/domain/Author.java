@@ -12,6 +12,9 @@ import java.util.Set;
 @Getter
 @Setter
 @EqualsAndHashCode(exclude = {"books"})
+@Table(uniqueConstraints = {
+        @UniqueConstraint(name = "firstname_lastname" , columnNames = {"firstname" , "lastname"})
+})
 public class Author {
 
     @Id

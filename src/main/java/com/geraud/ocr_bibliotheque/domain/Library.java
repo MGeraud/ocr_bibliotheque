@@ -18,6 +18,7 @@ public class Library {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_library;
 
+    @Column(unique = true)
     private String library_name;
     private String opening_hours;
     private String address;

@@ -17,6 +17,7 @@ public class Publisher {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_publisher;
 
+    @Column(unique = true)
     private String name;
 
     @OneToMany(mappedBy = "publisher")
