@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface AuthorDao extends JpaRepository<Author , Long> {
+public interface AuthorDao extends JpaRepository<Author, Long> {
 
-    List<Author> findAuthorsByFirstnameContainingIgnoreCaseOrLastnameContainingIgnoreCase(String firstname , String lastname);
+    List<Author> findAuthorsByFirstnameContainingIgnoreCaseOrLastnameContainingIgnoreCase(String firstname, String lastname);
 
 }

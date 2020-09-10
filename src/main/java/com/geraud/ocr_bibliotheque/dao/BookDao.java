@@ -13,10 +13,13 @@ import java.util.Optional;
 
 
 @Repository
-public interface BookDao extends JpaRepository <Book , Long > {
+public interface BookDao extends JpaRepository<Book, Long> {
 
     Optional<Book> findBookByIsbn(String isbn);
-    Page<Book> findBooksByTitleContainsIgnoreCase(String title , Pageable pageable);
-    Page<Book> findDistinctByAuthorsIn(List<Author> authors , Pageable pageable);
-    Page<Book> findDistinctByTopicsIn(List<Topic> topics , Pageable pageable);
+
+    Page<Book> findBooksByTitleContainsIgnoreCase(String title, Pageable pageable);
+
+    Page<Book> findDistinctByAuthorsIn(List<Author> authors, Pageable pageable);
+
+    Page<Book> findDistinctByTopicsIn(List<Topic> topics, Pageable pageable);
 }
