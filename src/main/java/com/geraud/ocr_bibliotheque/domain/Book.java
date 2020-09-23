@@ -15,7 +15,7 @@ public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_book;
+    private Long idbook;
 
     @Column(unique = true)
     private String isbn;
@@ -31,11 +31,11 @@ public class Book {
     private Category category;
 
     @ManyToMany
-    @JoinTable(name = "book_author", joinColumns = @JoinColumn(name = "id_book"), inverseJoinColumns = @JoinColumn(name = "id_author"))
+    @JoinTable(name = "book_author", joinColumns = @JoinColumn(name = "idbook"), inverseJoinColumns = @JoinColumn(name = "id_author"))
     private Set<Author> authors = new HashSet<>();
 
     @ManyToMany
-    @JoinTable(name = "book_topics", joinColumns = @JoinColumn(name = "id_book"), inverseJoinColumns = @JoinColumn(name = "id_topics"))
+    @JoinTable(name = "book_topics", joinColumns = @JoinColumn(name = "idbook"), inverseJoinColumns = @JoinColumn(name = "id_topics"))
     private Set<Topic> topics = new HashSet<>();
 
     @ManyToOne

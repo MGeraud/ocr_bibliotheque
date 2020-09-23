@@ -12,16 +12,16 @@ VALUES ('Paul', 'Robinson');
 INSERT INTO library (address, library_name, opening_hours)
 VALUES ('rue untel', 'Vite vite', '14h-15h');
 
-INSERT INTO stock(id_book, id_library, label, pillar, shelf, wings)
-VALUES ((SELECT id_book FROM book WHERE isbn = '1234'),
+INSERT INTO stock(idbook, id_library, label, pillar, shelf, wings)
+VALUES ((SELECT idbook FROM book WHERE isbn = '1234'),
         (SELECT id_library FROM library where library_name = 'Vite vite')
            , 'UTF1234', '54a0', '2A', 'allee E');
 INSERT INTO topic (keyword)
 VALUES ('escalade');
-INSERT INTO book_author (id_book, id_author)
-VALUES ((SELECT id_book FROM book WHERE isbn = '1234'), (SELECT id_author from author where firstname = 'Paul'));
-INSERT INTO book_topics (id_book, id_topics)
-VALUES ((SELECT id_book FROM book WHERE isbn = '1234'), (SELECT id_topic from topic where keyword = 'escalade'));
+INSERT INTO book_author (idbook, id_author)
+VALUES ((SELECT idbook FROM book WHERE isbn = '1234'), (SELECT id_author from author where firstname = 'Paul'));
+INSERT INTO book_topics (idbook, id_topics)
+VALUES ((SELECT idbook FROM book WHERE isbn = '1234'), (SELECT id_topic from topic where keyword = 'escalade'));
 
 
 INSERT INTO topic (keyword)
@@ -70,20 +70,20 @@ VALUES ('2409019536', 'Apache Maven la description ......',
         '2019',
         'LOISIRS',
         (SELECT id_publisher FROM publisher WHERE name = 'ENI Editions'));
-INSERT INTO stock(id_book, id_library, label, pillar, shelf, wings)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2409019536'),
+INSERT INTO stock(idbook, id_library, label, pillar, shelf, wings)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2409019536'),
         (SELECT id_library FROM library where library_name = 'Vite vite')
            , 'APA1234', '54a0', '2A', 'allee E');
-INSERT INTO book_author (id_book, id_author)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2409019536'),
+INSERT INTO book_author (idbook, id_author)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2409019536'),
         (SELECT id_author from author where firstname = 'Etienne')),
-       ((SELECT id_book FROM book WHERE isbn = '2409019536'),
+       ((SELECT idbook FROM book WHERE isbn = '2409019536'),
         (SELECT id_author from author where firstname = 'Maxime'));
-INSERT INTO book_topics (id_book, id_topics)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2409019536'), (SELECT id_topic from topic where keyword = 'maven')),
-       ((SELECT id_book FROM book WHERE isbn = '2409019536'),
+INSERT INTO book_topics (idbook, id_topics)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2409019536'), (SELECT id_topic from topic where keyword = 'maven')),
+       ((SELECT idbook FROM book WHERE isbn = '2409019536'),
         (SELECT id_topic from topic where keyword = 'informatique')),
-       ((SELECT id_book FROM book WHERE isbn = '2409019536'), (SELECT id_topic from topic where keyword = 'java'));
+       ((SELECT idbook FROM book WHERE isbn = '2409019536'), (SELECT id_topic from topic where keyword = 'java'));
 
 INSERT INTO book (isbn, description, image, title, year, category, publisher_id_publisher)
 VALUES ('2864973235', 'Asterix papyrus description ......',
@@ -92,29 +92,29 @@ VALUES ('2864973235', 'Asterix papyrus description ......',
         '2015',
         'BD',
         (SELECT id_publisher FROM publisher WHERE name = 'Albert Rene'));
-INSERT INTO stock(id_book, id_library, label, pillar, shelf, wings)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2864973235'),
+INSERT INTO stock(idbook, id_library, label, pillar, shelf, wings)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2864973235'),
         (SELECT id_library FROM library where library_name = 'Vite vite')
            , 'AST1234', '54a0', '2A', 'allee E');
-INSERT INTO stock(id_book, id_library, label, pillar, shelf, wings)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2864973235'),
+INSERT INTO stock(idbook, id_library, label, pillar, shelf, wings)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2864973235'),
         (SELECT id_library FROM library where library_name = 'Grande librairie de la ville')
            , 'AST1234A', '54a0', '2A', 'allee E');
-INSERT INTO stock(id_book, id_library, label, pillar, shelf, wings)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2864973235'),
+INSERT INTO stock(idbook, id_library, label, pillar, shelf, wings)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2864973235'),
         (SELECT id_library FROM library where library_name = 'La 3eme de la ville')
            , 'AST1234C', '54a0', '2A', 'allee E');
-INSERT INTO book_author (id_book, id_author)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2864973235'),
+INSERT INTO book_author (idbook, id_author)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2864973235'),
         (SELECT id_author from author where firstname = 'Jean-Yves')),
-       ((SELECT id_book FROM book WHERE isbn = '2864973235'), (SELECT id_author from author where firstname = 'Rene')),
-       ((SELECT id_book FROM book WHERE isbn = '2864973235'),
+       ((SELECT idbook FROM book WHERE isbn = '2864973235'), (SELECT id_author from author where firstname = 'Rene')),
+       ((SELECT idbook FROM book WHERE isbn = '2864973235'),
         (SELECT id_author from author where firstname = 'Albert')),
-       ((SELECT id_book FROM book WHERE isbn = '2864973235'),
+       ((SELECT idbook FROM book WHERE isbn = '2864973235'),
         (SELECT id_author from author where firstname = 'Didier'));
-INSERT INTO book_topics (id_book, id_topics)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2864973235'), (SELECT id_topic from topic where keyword = 'asterix')),
-       ((SELECT id_book FROM book WHERE isbn = '2864973235'), (SELECT id_topic from topic where keyword = 'obelix'));
+INSERT INTO book_topics (idbook, id_topics)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2864973235'), (SELECT id_topic from topic where keyword = 'asterix')),
+       ((SELECT idbook FROM book WHERE isbn = '2864973235'), (SELECT id_topic from topic where keyword = 'obelix'));
 
 INSERT INTO book (isbn, description, image, title, year, category, publisher_id_publisher)
 VALUES ('2864973464', 'Asterix Le Menhir d Or description ......',
@@ -123,21 +123,21 @@ VALUES ('2864973464', 'Asterix Le Menhir d Or description ......',
         '2020',
         'BD',
         (SELECT id_publisher FROM publisher WHERE name = 'Albert Rene'));
-INSERT INTO stock(id_book, id_library, label, pillar, shelf, wings)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2864973464'),
+INSERT INTO stock(idbook, id_library, label, pillar, shelf, wings)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2864973464'),
         (SELECT id_library FROM library where library_name = 'Vite vite')
            , 'AST5678', '54a0', '2A', 'allee E');
-INSERT INTO stock(id_book, id_library, label, pillar, shelf, wings)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2864973464'),
+INSERT INTO stock(idbook, id_library, label, pillar, shelf, wings)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2864973464'),
         (SELECT id_library FROM library where library_name = 'Grande librairie de la ville')
            , 'AST5678A', '54a0', '2A', 'allee E');
-INSERT INTO book_author (id_book, id_author)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2864973464'), (SELECT id_author from author where firstname = 'Rene')),
-       ((SELECT id_book FROM book WHERE isbn = '2864973464'),
+INSERT INTO book_author (idbook, id_author)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2864973464'), (SELECT id_author from author where firstname = 'Rene')),
+       ((SELECT idbook FROM book WHERE isbn = '2864973464'),
         (SELECT id_author from author where firstname = 'Albert'));
-INSERT INTO book_topics (id_book, id_topics)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2864973464'), (SELECT id_topic from topic where keyword = 'asterix')),
-       ((SELECT id_book FROM book WHERE isbn = '2864973464'), (SELECT id_topic from topic where keyword = 'obelix'));
+INSERT INTO book_topics (idbook, id_topics)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2864973464'), (SELECT id_topic from topic where keyword = 'asterix')),
+       ((SELECT idbook FROM book WHERE isbn = '2864973464'), (SELECT id_topic from topic where keyword = 'obelix'));
 
 
 INSERT INTO book (isbn, description, image, title, year, category, publisher_id_publisher)
@@ -147,25 +147,25 @@ VALUES ('2864971534', 'Astérix et la rentrée gauloise description ......',
         '2003',
         'BD',
         (SELECT id_publisher FROM publisher WHERE name = 'Albert Rene'));
-INSERT INTO stock(id_book, id_library, label, pillar, shelf, wings)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2864971534'),
+INSERT INTO stock(idbook, id_library, label, pillar, shelf, wings)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2864971534'),
         (SELECT id_library FROM library where library_name = 'Vite vite')
            , 'AST9011', '54a0', '2A', 'allee E');
-INSERT INTO stock(id_book, id_library, label, pillar, shelf, wings)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2864971534'),
+INSERT INTO stock(idbook, id_library, label, pillar, shelf, wings)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2864971534'),
         (SELECT id_library FROM library where library_name = 'Grande librairie de la ville')
            , 'AST9011A', '54a0', '2A', 'allee E');
-INSERT INTO stock(id_book, id_library, label, pillar, shelf, wings)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2864971534'),
+INSERT INTO stock(idbook, id_library, label, pillar, shelf, wings)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2864971534'),
         (SELECT id_library FROM library where library_name = 'La 3eme de la ville')
            , 'AST9011C', '54a0', '2A', 'allee E');
-INSERT INTO book_author (id_book, id_author)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2864971534'), (SELECT id_author from author where firstname = 'Rene')),
-       ((SELECT id_book FROM book WHERE isbn = '2864971534'),
+INSERT INTO book_author (idbook, id_author)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2864971534'), (SELECT id_author from author where firstname = 'Rene')),
+       ((SELECT idbook FROM book WHERE isbn = '2864971534'),
         (SELECT id_author from author where firstname = 'Albert'));
-INSERT INTO book_topics (id_book, id_topics)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2864971534'), (SELECT id_topic from topic where keyword = 'asterix')),
-       ((SELECT id_book FROM book WHERE isbn = '2864971534'), (SELECT id_topic from topic where keyword = 'obelix'));
+INSERT INTO book_topics (idbook, id_topics)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2864971534'), (SELECT id_topic from topic where keyword = 'asterix')),
+       ((SELECT idbook FROM book WHERE isbn = '2864971534'), (SELECT id_topic from topic where keyword = 'obelix'));
 
 INSERT INTO book (isbn, description, image, title, year, category, publisher_id_publisher)
 VALUES ('2070612902', 'Le Seigneur des anneaux - Tome 3 description ......',
@@ -174,20 +174,20 @@ VALUES ('2070612902', 'Le Seigneur des anneaux - Tome 3 description ......',
         '2019',
         'LITTERATURE',
         (SELECT id_publisher FROM publisher WHERE name = 'Gallimard jeunesse'));
-INSERT INTO stock(id_book, id_library, label, pillar, shelf, wings)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2070612902'),
+INSERT INTO stock(idbook, id_library, label, pillar, shelf, wings)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2070612902'),
         (SELECT id_library FROM library where library_name = 'Vite vite')
            , 'SA123', '54a0', '2A', 'allee E');
-INSERT INTO stock(id_book, id_library, label, pillar, shelf, wings)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2070612902'),
+INSERT INTO stock(idbook, id_library, label, pillar, shelf, wings)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2070612902'),
         (SELECT id_library FROM library where library_name = 'La 3eme de la ville')
            , 'SA123C', '54a0', '2A', 'allee E');
-INSERT INTO book_author (id_book, id_author)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2070612902'), (SELECT id_author from author where firstname = 'JRR'));
-INSERT INTO book_topics (id_book, id_topics)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2070612902'),
+INSERT INTO book_author (idbook, id_author)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2070612902'), (SELECT id_author from author where firstname = 'JRR'));
+INSERT INTO book_topics (idbook, id_topics)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2070612902'),
         (SELECT id_topic from topic where keyword = 'fantastique')),
-       ((SELECT id_book FROM book WHERE isbn = '2070612902'), (SELECT id_topic from topic where keyword = 'anneau'));
+       ((SELECT idbook FROM book WHERE isbn = '2070612902'), (SELECT id_topic from topic where keyword = 'anneau'));
 
 INSERT INTO book (isbn, description, image, title, year, category, publisher_id_publisher)
 VALUES ('2266282417', 'Le Seigneur des anneaux - Tome 3 description ......',
@@ -196,16 +196,16 @@ VALUES ('2266282417', 'Le Seigneur des anneaux - Tome 3 description ......',
         '2017',
         'LITTERATURE',
         (SELECT id_publisher FROM publisher WHERE name = 'Pocket'));
-INSERT INTO stock(id_book, id_library, label, pillar, shelf, wings)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2266282417'),
+INSERT INTO stock(idbook, id_library, label, pillar, shelf, wings)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2266282417'),
         (SELECT id_library FROM library where library_name = 'Vite vite')
            , 'SA456', '54a0', '2A', 'allee E');
-INSERT INTO book_author (id_book, id_author)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2266282417'), (SELECT id_author from author where firstname = 'JRR'));
-INSERT INTO book_topics (id_book, id_topics)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2266282417'),
+INSERT INTO book_author (idbook, id_author)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2266282417'), (SELECT id_author from author where firstname = 'JRR'));
+INSERT INTO book_topics (idbook, id_topics)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2266282417'),
         (SELECT id_topic from topic where keyword = 'fantastique')),
-       ((SELECT id_book FROM book WHERE isbn = '2266282417'), (SELECT id_topic from topic where keyword = 'anneau'));
+       ((SELECT idbook FROM book WHERE isbn = '2266282417'), (SELECT id_topic from topic where keyword = 'anneau'));
 
 INSERT INTO book (isbn, description, image, title, year, category, publisher_id_publisher)
 VALUES ('2070612899', 'Le Seigneur des anneaux - Tome 2 description ......',
@@ -214,16 +214,16 @@ VALUES ('2070612899', 'Le Seigneur des anneaux - Tome 2 description ......',
         '2019',
         'LITTERATURE',
         (SELECT id_publisher FROM publisher WHERE name = 'Gallimard jeunesse'));
-INSERT INTO stock(id_book, id_library, label, pillar, shelf, wings)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2070612899'),
+INSERT INTO stock(idbook, id_library, label, pillar, shelf, wings)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2070612899'),
         (SELECT id_library FROM library where library_name = 'Vite vite')
            , 'SA2-123', '54a0', '2A', 'allee E');
-INSERT INTO book_author (id_book, id_author)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2070612899'), (SELECT id_author from author where firstname = 'JRR'));
-INSERT INTO book_topics (id_book, id_topics)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2070612899'),
+INSERT INTO book_author (idbook, id_author)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2070612899'), (SELECT id_author from author where firstname = 'JRR'));
+INSERT INTO book_topics (idbook, id_topics)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2070612899'),
         (SELECT id_topic from topic where keyword = 'fantastique')),
-       ((SELECT id_book FROM book WHERE isbn = '2070612899'), (SELECT id_topic from topic where keyword = 'anneau'));
+       ((SELECT idbook FROM book WHERE isbn = '2070612899'), (SELECT id_topic from topic where keyword = 'anneau'));
 
 INSERT INTO book (isbn, description, image, title, year, category, publisher_id_publisher)
 VALUES ('2266282409', 'Le Seigneur des anneaux - Tome 2 description ......',
@@ -232,16 +232,16 @@ VALUES ('2266282409', 'Le Seigneur des anneaux - Tome 2 description ......',
         '2017',
         'LITTERATURE',
         (SELECT id_publisher FROM publisher WHERE name = 'Pocket'));
-INSERT INTO stock(id_book, id_library, label, pillar, shelf, wings)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2266282409'),
+INSERT INTO stock(idbook, id_library, label, pillar, shelf, wings)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2266282409'),
         (SELECT id_library FROM library where library_name = 'Vite vite')
            , 'SA2-456', '54a0', '2A', 'allee E');
-INSERT INTO book_author (id_book, id_author)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2266282409'), (SELECT id_author from author where firstname = 'JRR'));
-INSERT INTO book_topics (id_book, id_topics)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2266282409'),
+INSERT INTO book_author (idbook, id_author)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2266282409'), (SELECT id_author from author where firstname = 'JRR'));
+INSERT INTO book_topics (idbook, id_topics)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2266282409'),
         (SELECT id_topic from topic where keyword = 'fantastique')),
-       ((SELECT id_book FROM book WHERE isbn = '2266282409'), (SELECT id_topic from topic where keyword = 'anneau'));
+       ((SELECT idbook FROM book WHERE isbn = '2266282409'), (SELECT id_topic from topic where keyword = 'anneau'));
 
 INSERT INTO book (isbn, description, image, title, year, category, publisher_id_publisher)
 VALUES ('2070612880', 'Le Seigneur des anneaux - Tome 1 description ......',
@@ -250,16 +250,16 @@ VALUES ('2070612880', 'Le Seigneur des anneaux - Tome 1 description ......',
         '2019',
         'LITTERATURE',
         (SELECT id_publisher FROM publisher WHERE name = 'Gallimard jeunesse'));
-INSERT INTO stock(id_book, id_library, label, pillar, shelf, wings)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2070612880'),
+INSERT INTO stock(idbook, id_library, label, pillar, shelf, wings)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2070612880'),
         (SELECT id_library FROM library where library_name = 'Vite vite')
            , 'SA1-123', '54a0', '2A', 'allee E');
-INSERT INTO book_author (id_book, id_author)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2070612880'), (SELECT id_author from author where firstname = 'JRR'));
-INSERT INTO book_topics (id_book, id_topics)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2070612880'),
+INSERT INTO book_author (idbook, id_author)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2070612880'), (SELECT id_author from author where firstname = 'JRR'));
+INSERT INTO book_topics (idbook, id_topics)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2070612880'),
         (SELECT id_topic from topic where keyword = 'fantastique')),
-       ((SELECT id_book FROM book WHERE isbn = '2070612880'), (SELECT id_topic from topic where keyword = 'anneau'));
+       ((SELECT idbook FROM book WHERE isbn = '2070612880'), (SELECT id_topic from topic where keyword = 'anneau'));
 
 INSERT INTO book (isbn, description, image, title, year, category, publisher_id_publisher)
 VALUES ('2266282360', 'Le Seigneur des anneaux - Tome 1 description ......',
@@ -268,13 +268,13 @@ VALUES ('2266282360', 'Le Seigneur des anneaux - Tome 1 description ......',
         '2017',
         'LITTERATURE',
         (SELECT id_publisher FROM publisher WHERE name = 'Pocket'));
-INSERT INTO stock(id_book, id_library, label, pillar, shelf, wings)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2266282360'),
+INSERT INTO stock(idbook, id_library, label, pillar, shelf, wings)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2266282360'),
         (SELECT id_library FROM library where library_name = 'Vite vite')
            , 'SA1-456', '54a0', '2A', 'allee E');
-INSERT INTO book_author (id_book, id_author)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2266282360'), (SELECT id_author from author where firstname = 'JRR'));
-INSERT INTO book_topics (id_book, id_topics)
-VALUES ((SELECT id_book FROM book WHERE isbn = '2266282360'),
+INSERT INTO book_author (idbook, id_author)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2266282360'), (SELECT id_author from author where firstname = 'JRR'));
+INSERT INTO book_topics (idbook, id_topics)
+VALUES ((SELECT idbook FROM book WHERE isbn = '2266282360'),
         (SELECT id_topic from topic where keyword = 'fantastique')),
-       ((SELECT id_book FROM book WHERE isbn = '2266282360'), (SELECT id_topic from topic where keyword = 'anneau'));
+       ((SELECT idbook FROM book WHERE isbn = '2266282360'), (SELECT id_topic from topic where keyword = 'anneau'));

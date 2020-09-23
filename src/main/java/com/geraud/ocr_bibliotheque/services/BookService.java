@@ -11,7 +11,7 @@ public interface BookService {
 
     Page<Book> findByTitle(String title, Pageable pageable);
 
-    Page<Book> findAllWithPagination(int page, int size);
+    Page<Book> findAllWithPagination(Pageable pageable);
 
     Page<Book> findByAuthor(String name, Pageable pageable);
 

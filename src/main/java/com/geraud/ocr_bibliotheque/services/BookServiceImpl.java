@@ -9,7 +9,6 @@ import com.geraud.ocr_bibliotheque.domain.Topic;
 import com.geraud.ocr_bibliotheque.exceptions.ResultNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -53,8 +52,8 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public Page<Book> findAllWithPagination(int page, int size) {
-        return bookDao.findAll(PageRequest.of(page, size));
+    public Page<Book> findAllWithPagination(Pageable pageable) {
+        return bookDao.findAll(pageable);
     }
 
 
