@@ -73,7 +73,7 @@ public class BookController {
      */
     @RequestMapping(value = "/books/author")
     public PagedModel<EntityModel<Book>> showByAuthor(@RequestParam(value = "page", defaultValue = "0") int page,
-                                   @RequestParam(value = "size", defaultValue = "10") int size,
+                                   @RequestParam(value = "size", defaultValue = "5") int size,
                                    @RequestParam("queryparam") String author) {
 
         Pageable pageable = PageRequest.of(page, size);
@@ -91,7 +91,7 @@ public class BookController {
      */
     @RequestMapping(value = "/books/title")
     public PagedModel<EntityModel<Book>> showByTitle(@RequestParam(value = "page", defaultValue = "0") int page,
-                                  @RequestParam(value = "size", defaultValue = "10") int size,
+                                  @RequestParam(value = "size", defaultValue = "5") int size,
                                   @RequestParam("queryparam") String title) {
 
         Pageable pageable = PageRequest.of(page, size);
@@ -109,7 +109,7 @@ public class BookController {
      */
     @RequestMapping(value = "/books/topic")
     public PagedModel<EntityModel<Book>> showByTopic(@RequestParam(value = "page", defaultValue = "0") int page,
-                                  @RequestParam(value = "size", defaultValue = "10") int size,
+                                  @RequestParam(value = "size", defaultValue = "5") int size,
                                   @RequestParam("queryparam") String topic) {
 
         Pageable pageable = PageRequest.of(page, size);
