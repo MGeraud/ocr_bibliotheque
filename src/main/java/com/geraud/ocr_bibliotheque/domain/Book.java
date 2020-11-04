@@ -3,6 +3,7 @@ package com.geraud.ocr_bibliotheque.domain;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -23,6 +24,7 @@ public class Book {
     private String title;
 
     @Lob
+    @Type(type = "org.hibernate.type.TextType") //annotation évitant qu'hibernate n'essaye de gérer le Lob en long avec PostgreSQL
     private String description;
     private int year;
     private String image;
