@@ -191,7 +191,7 @@ VALUES ((SELECT idbook FROM book WHERE isbn = '2070612902'),
 
 INSERT INTO book (isbn, description, image, title, year, category, publisher_id_publisher)
 VALUES ('2266282417', 'Le Seigneur des anneaux - Tome 3 description ......',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQPnqLg-ZNDp-gCozCKJcC_dCNJp_rhRMAyLw&usqp=CAU',
+        'https://pictures.abebooks.com/isbn/9782266282413-fr-300.jpg',
         'Le Seigneur des anneaux - Tome 3',
         '2017',
         'LITTERATURE',
@@ -209,7 +209,7 @@ VALUES ((SELECT idbook FROM book WHERE isbn = '2266282417'),
 
 INSERT INTO book (isbn, description, image, title, year, category, publisher_id_publisher)
 VALUES ('2070612899', 'Le Seigneur des anneaux - Tome 2 description ......',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQPnqLg-ZNDp-gCozCKJcC_dCNJp_rhRMAyLw&usqp=CAU',
+        'https://pictures.abebooks.com/isbn/9782070612895-fr.jpg',
         'Le Seigneur des anneaux - Tome 2',
         '2019',
         'LITTERATURE',
@@ -227,7 +227,7 @@ VALUES ((SELECT idbook FROM book WHERE isbn = '2070612899'),
 
 INSERT INTO book (isbn, description, image, title, year, category, publisher_id_publisher)
 VALUES ('2266282409', 'Le Seigneur des anneaux - Tome 2 description ......',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQPnqLg-ZNDp-gCozCKJcC_dCNJp_rhRMAyLw&usqp=CAU',
+        'https://pictures.abebooks.com/isbn/9782266282406-fr.jpg',
         'Le Seigneur des anneaux - Tome 2',
         '2017',
         'LITTERATURE',
@@ -245,7 +245,7 @@ VALUES ((SELECT idbook FROM book WHERE isbn = '2266282409'),
 
 INSERT INTO book (isbn, description, image, title, year, category, publisher_id_publisher)
 VALUES ('2070612880', 'Le Seigneur des anneaux - Tome 1 description ......',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQPnqLg-ZNDp-gCozCKJcC_dCNJp_rhRMAyLw&usqp=CAU',
+        'https://pictures.abebooks.com/isbn/9782070612888-fr.jpg',
         'Le Seigneur des anneaux - Tome 1',
         '2019',
         'LITTERATURE',
@@ -263,7 +263,7 @@ VALUES ((SELECT idbook FROM book WHERE isbn = '2070612880'),
 
 INSERT INTO book (isbn, description, image, title, year, category, publisher_id_publisher)
 VALUES ('2266282360', 'Le Seigneur des anneaux - Tome 1 description ......',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQPnqLg-ZNDp-gCozCKJcC_dCNJp_rhRMAyLw&usqp=CAU',
+        'https://pictures.abebooks.com/isbn/9782266282369-fr.jpg',
         'Le Seigneur des anneaux - Tome 1',
         '2017',
         'LITTERATURE',
